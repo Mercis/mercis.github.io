@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.dannisi.xin/404.html</loc>
+    <loc>http://www.dannisi.xin/about/index.html</loc>
     
-    <lastmod>2017-07-22T03:42:24.621Z</lastmod>
+    <lastmod>2017-07-23T06:57:18.780Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.dannisi.xin/2017/07/21/hello-world/</loc>
     
-    <lastmod>2017-07-21T08:01:57.841Z</lastmod>
+    <lastmod>2017-07-23T06:53:39.679Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.dannisi.xin/tags/index.html</loc>
+    
+    <lastmod>2017-07-23T06:46:46.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.dannisi.xin/categories/index.html</loc>
+    
+    <lastmod>2017-07-23T06:42:27.380Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.dannisi.xin/404.html</loc>
+    
+    <lastmod>2017-07-22T03:42:24.621Z</lastmod>
     
   </url>
   
