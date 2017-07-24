@@ -248,16 +248,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -521,9 +511,17 @@
     好好干,天天米饭---李丹
     </a>
   </span>
+  <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+  <span id="showDays"></span>
 </div>
 
-
+<script>
+  var birthDay = new Date('07/20/2017');
+  var now = new Date();
+  var duration = now.getTime() - birthDay.getTime();
+  var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+  document.getElementById('showDays').innerHTML='本站已运行' + total + '天';
+</script>
         
 
         
