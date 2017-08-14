@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2017-07-24T02:58:06.043Z</updated>
+  <updated>2017-08-14T06:59:48.453Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>yii2学习心得(一)</title>
+    <link href="http://www.dannisi.xin/2017/08/14/aboutYii/"/>
+    <id>http://www.dannisi.xin/2017/08/14/aboutYii/</id>
+    <published>2017-08-14T06:07:07.000Z</published>
+    <updated>2017-08-14T06:59:48.453Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>给大家分享一些这段时间我学习yii2 踩得一些坑</p>
+<hr>
+<h3 id="一-关于安装yii2-高级模板"><a href="#一-关于安装yii2-高级模板" class="headerlink" title="一 关于安装yii2 高级模板"></a>一 关于安装yii2 高级模板</h3><pre><code>1. 执行composer self-update.确保你的composer是最新的
+  2. 安装最新的Composer Asset Plugin：composer global require &quot;fxp/composer-asset-plugin:^1.2.0&quot;
+  3. 安装Yii2高级模板：composer create-project yiisoft/yii2-app-advanced advanced 2.0.11
+</code></pre><hr>
+<a id="more"></a>
+<h3 id="二-配置端口或者域名"><a href="#二-配置端口或者域名" class="headerlink" title="二 配置端口或者域名"></a>二 配置端口或者域名</h3><pre><code>1.不管是advanced还是basic,配置域名或者端口,需要到目录***/www/yourProject/backend/web (建议不加上index.php)
+2.当然其他配置也需要更改,过来人,不多说
+</code></pre><hr>
+<p>###三 一些常用的代码</p>
+<pre><code>1. 打印错误:
+    echo array_values($model-&gt;getFirstErrors())[0];exit;
+2. 打印SQL语句: 
+    $query = User::find() -&gt;where([&apos;id&apos;=&gt;[1,2,3,4]) -&gt;select([&apos;username&apos;])
+    // 输出SQL语句
+    $commandQuery = clone $query;
+    echo $commandQuery-&gt;createCommand()-&gt;getRawSql();
+    $users = $query-&gt;all();
+3. 常用查询语句:
+    User::find()-&gt;scalar();此方法返回值的第一行第一列的查询结果；
+   User::find()-&gt;column();    此方法返回查询结果中的第一列的值；
+   User::find()-&gt;andWhere([&apos;sex&apos; =&gt; &apos;男&apos;, &apos;age&apos; =&gt; &apos;24&apos;])-&gt;count(&apos;id&apos;);   统计符合条件的总条数；
+   User::find()-&gt;andFilterWhere([&apos;like&apos;, &apos;name&apos;, &apos;小老板&apos;]); 此方法是用like查询name 等于小老板的数据 (备注:此方法会过滤 字段值为空的条件, 所以想要用连续查询的小老板,就用andWhere)
+</code></pre><hr>
+<p>###四 关于restful api</p>
+<pre><code>1.搭建: 网上教程很多
+2.配置: 网上也有,注意common/config/bootstrap.php 加上 Yii::setAlias(&apos;@api&apos;, dirname(dirname(__DIR__)) . &apos;/api&apos;);
+3.风格: 在你的控制器里面 比如UserController.php中得加上public $modelClass = &apos;api\models\user&apos;;
+4.如果你遇到了这样的问题: Your request was made with invalid credentials. 你可以在***\vendor\yiisoft\yii2\filters\auth\QueryParamAuth.php 中 authenticate 打印$accessToken 如果为空的话 改成 $accessToken = $request-&gt;headers-&gt;get($this-&gt;tokenParam);
+</code></pre><hr>
+<p>###总结<br>     后面会继续分享一些东西,希望这些能帮到你…    </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;给大家分享一些这段时间我学习yii2 踩得一些坑&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;一-关于安装yii2-高级模板&quot;&gt;&lt;a href=&quot;#一-关于安装yii2-高级模板&quot; class=&quot;headerlink&quot; title=&quot;一 关于安装yii2 高级模板&quot;&gt;&lt;/a&gt;一 关于安装yii2 高级模板&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;1. 执行composer self-update.确保你的composer是最新的
+  2. 安装最新的Composer Asset Plugin：composer global require &amp;quot;fxp/composer-asset-plugin:^1.2.0&amp;quot;
+  3. 安装Yii2高级模板：composer create-project yiisoft/yii2-app-advanced advanced 2.0.11
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://www.dannisi.xin/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="yii" scheme="http://www.dannisi.xin/tags/yii/"/>
+    
+      <category term="restful api" scheme="http://www.dannisi.xin/tags/restful-api/"/>
+    
+  </entry>
   
   <entry>
     <title>不灭的记忆</title>
