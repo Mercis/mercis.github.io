@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Leo&#39;s Blog">
 <meta property="og:description" content="简介给大家分享一些这段时间我学习yii2 踩得一些坑  一 关于安装yii2 高级模板1. 执行composer self-update.确保你的composer是最新的   2. 安装最新的Composer Asset Plugin：composer global require &amp;quot;fxp/composer-asset-plugin:^1.2.0&amp;quot;   3. 安装Yii2高级">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-14T07:07:51.919Z">
+<meta property="og:updated_time" content="2017-08-14T07:12:35.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yii2学习心得(一)">
 <meta name="twitter:description" content="简介给大家分享一些这段时间我学习yii2 踩得一些坑  一 关于安装yii2 高级模板1. 执行composer self-update.确保你的composer是最新的   2. 安装最新的Composer Asset Plugin：composer global require &amp;quot;fxp/composer-asset-plugin:^1.2.0&amp;quot;   3. 安装Yii2高级">
@@ -397,8 +397,7 @@
 <h3 id="二-配置端口或者域名"><a href="#二-配置端口或者域名" class="headerlink" title="二 配置端口或者域名"></a>二 配置端口或者域名</h3><pre><code>1.不管是advanced还是basic,配置域名或者端口,需要到目录***/www/yourProject/backend/web (建议不加上index.php)
 2.当然其他配置也需要更改,过来人,不多说
 </code></pre><hr>
-<p>###三 一些常用的代码</p>
-<pre><code>1. 打印错误:
+<h3 id="三-一些常用的代码"><a href="#三-一些常用的代码" class="headerlink" title="三 一些常用的代码"></a>三 一些常用的代码</h3><pre><code>1. 打印错误:
     echo array_values($model-&gt;getFirstErrors())[0];exit;
 2. 打印SQL语句: 
     $query = User::find() -&gt;where([&apos;id&apos;=&gt;[1,2,3,4]) -&gt;select([&apos;username&apos;])
@@ -412,14 +411,13 @@
    User::find()-&gt;andWhere([&apos;sex&apos; =&gt; &apos;男&apos;, &apos;age&apos; =&gt; &apos;24&apos;])-&gt;count(&apos;id&apos;);   统计符合条件的总条数；
    User::find()-&gt;andFilterWhere([&apos;like&apos;, &apos;name&apos;, &apos;小老板&apos;]); 此方法是用like查询name 等于小老板的数据 (备注:此方法会过滤 字段值为空的条件, 所以想要用连续查询的小老板,就用andWhere)
 </code></pre><hr>
-<p>###四 关于restful api</p>
-<pre><code>1.搭建: 网上教程很多
+<h3 id="四-关于restful-api"><a href="#四-关于restful-api" class="headerlink" title="四 关于restful api"></a>四 关于restful api</h3><pre><code>1.搭建: 网上教程很多
 2.配置: 网上也有,注意common/config/bootstrap.php 加上 Yii::setAlias(&apos;@api&apos;, dirname(dirname(__DIR__)) . &apos;/api&apos;);
 3.风格: 在你的控制器里面 比如UserController.php中得加上public $modelClass = &apos;api\models\user&apos;;
 4.如果你遇到了这样的问题: Your request was made with invalid credentials. 你可以在***\vendor\yiisoft\yii2\filters\auth\QueryParamAuth.php 中 authenticate 打印$accessToken 如果为空的话 改成 $accessToken = $request-&gt;headers-&gt;get($this-&gt;tokenParam);
 </code></pre><hr>
-<p>###总结<br>     后面会继续分享一些东西,希望这些能帮到你…    </p>
-
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre><code>后面会继续分享一些东西,希望这些能帮到你...    
+</code></pre>
       
     </div>
 
@@ -699,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-关于安装yii2-高级模板"><span class="nav-number">1.1.</span> <span class="nav-text">一 关于安装yii2 高级模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-配置端口或者域名"><span class="nav-number">1.2.</span> <span class="nav-text">二 配置端口或者域名</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-关于安装yii2-高级模板"><span class="nav-number">1.1.</span> <span class="nav-text">一 关于安装yii2 高级模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-配置端口或者域名"><span class="nav-number">1.2.</span> <span class="nav-text">二 配置端口或者域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-一些常用的代码"><span class="nav-number">1.3.</span> <span class="nav-text">三 一些常用的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-关于restful-api"><span class="nav-number">1.4.</span> <span class="nav-text">四 关于restful api</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
