@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2017-08-14T06:59:48.453Z</updated>
+  <updated>2017-08-14T07:07:51.919Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>yii2学习心得(一)</title>
-    <link href="http://www.dannisi.xin/2017/08/14/aboutYii/"/>
-    <id>http://www.dannisi.xin/2017/08/14/aboutYii/</id>
+    <link href="http://www.dannisi.xin/2017/08/14/Yii/"/>
+    <id>http://www.dannisi.xin/2017/08/14/Yii/</id>
     <published>2017-08-14T06:07:07.000Z</published>
-    <updated>2017-08-14T06:59:48.453Z</updated>
+    <updated>2017-08-14T07:07:51.919Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>给大家分享一些这段时间我学习yii2 踩得一些坑</p>
 <hr>
