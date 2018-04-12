@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-04-12T06:23:42.316Z</updated>
+  <updated>2018-04-12T08:03:41.958Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://www.dannisi.xin/2018/04/12/redis/"/>
     <id>http://www.dannisi.xin/2018/04/12/redis/</id>
     <published>2018-04-12T06:05:02.000Z</published>
-    <updated>2018-04-12T06:23:42.316Z</updated>
+    <updated>2018-04-12T08:03:41.958Z</updated>
     
     <content type="html"><![CDATA[<h2 id="关与yii2封装的redis的安装使用"><a href="#关与yii2封装的redis的安装使用" class="headerlink" title="关与yii2封装的redis的安装使用"></a>关与yii2封装的redis的安装使用</h2><pre><code>安装redis扩展就不介绍了,进入主题
 </code></pre><hr>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>composer require --prefer-dist yiisoft/yii2-redis
 </code></pre><hr>
+<a id="more"></a>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>&apos;components&apos; =&gt; [
     &apos;redis&apos; =&gt; [
         &apos;class&apos; =&gt; &apos;yii\redis\Connection&apos;,
@@ -67,7 +68,10 @@ zset的item是唯一的，但是分数是可以重复的</code></p>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;关与yii2封装的redis的安装使用&quot;&gt;&lt;a href=&quot;#关与yii2封装的redis的安装使用&quot; class=&quot;headerlink&quot; title=&quot;关与yii2封装的redis的安装使用&quot;&gt;&lt;/a&gt;关与yii2封装的redis的安装使用&lt;/h2&gt;&lt;pre&gt;
+      &lt;h2 id=&quot;关与yii2封装的redis的安装使用&quot;&gt;&lt;a href=&quot;#关与yii2封装的redis的安装使用&quot; class=&quot;headerlink&quot; title=&quot;关与yii2封装的redis的安装使用&quot;&gt;&lt;/a&gt;关与yii2封装的redis的安装使用&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;安装redis扩展就不介绍了,进入主题
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;composer require --prefer-dist yiisoft/yii2-redis
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
     
     </summary>
     

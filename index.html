@@ -390,50 +390,17 @@
 
       
         
-          
-            <h2 id="关与yii2封装的redis的安装使用"><a href="#关与yii2封装的redis的安装使用" class="headerlink" title="关与yii2封装的redis的安装使用"></a>关与yii2封装的redis的安装使用</h2><pre><code>安装redis扩展就不介绍了,进入主题
+          <h2 id="关与yii2封装的redis的安装使用"><a href="#关与yii2封装的redis的安装使用" class="headerlink" title="关与yii2封装的redis的安装使用"></a>关与yii2封装的redis的安装使用</h2><pre><code>安装redis扩展就不介绍了,进入主题
 </code></pre><hr>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>composer require --prefer-dist yiisoft/yii2-redis
 </code></pre><hr>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>&apos;components&apos; =&gt; [
-    &apos;redis&apos; =&gt; [
-        &apos;class&apos; =&gt; &apos;yii\redis\Connection&apos;,
-        &apos;hostname&apos; =&gt; &apos;localhost&apos;,
-        &apos;port&apos; =&gt; 6379,
-        &apos;database&apos; =&gt; 0,
-        &apos;password&apos;=&gt;&apos;123456&apos;
-    ],
-] 
-</code></pre><hr>
-<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><pre><code>$redis = Yii::$app-&gt;redis; //实例化
-$result = $redis-&gt;executeCommand(&apos;hmset&apos;, [&apos;test&apos;, &apos;key1&apos;, &apos;val1&apos;, &apos;key2&apos;, &apos;val2&apos;]);
-</code></pre><hr>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h3><blockquote>
-<ul>
-<li>是Redis最基本的数据类型，可以理解成memcached一模一样的类型，一个key对应一个value</li>
-<li>二进制安全的，意思是Redis的string可以包含任何数据。比如jpg图片或者序列化的对象</li>
-<li>一个键最大的存储512MB</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;name&quot;:&quot;hello&quot;,</div><div class="line">&quot;age&quot;:&quot;25&quot;,</div><div class="line">&quot;city&quot;:&quot;shanghai&quot;</div></pre></td></tr></table></figure>
-<h3 id="hash-散列"><a href="#hash-散列" class="headerlink" title="hash 散列"></a>hash 散列</h3><blockquote>
-<ul>
-<li>是一个键值对集合</li>
-<li>是一个string类型的field和value的映射表，hash特别适合用于存储对象</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;user&quot;:[</div><div class="line">	&quot;name1&quot;:&quot;test1&quot;,</div><div class="line">	&quot;name2&quot;:&quot;test2&quot;,</div><div class="line"> 	&quot;name3&quot;:&quot;test3&quot;</div><div class="line">]</div></pre></td></tr></table></figure>
-<h3 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h3><p><code>item 可重复</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;user&quot;:[</div><div class="line">	&quot;test1&quot;,</div><div class="line">  	&quot;test2&quot;,</div><div class="line">  	&quot;test1&quot;</div><div class="line">]</div></pre></td></tr></table></figure>
-<h3 id="set-集合"><a href="#set-集合" class="headerlink" title="set 集合"></a>set 集合</h3><p><code>item 不可重复 
-Redis的set是string类型的无序集合</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;user&quot;:[</div><div class="line">	&quot;test1&quot;,</div><div class="line">	&quot;test2&quot;,</div><div class="line">	&quot;test3&quot;</div><div class="line">]</div></pre></td></tr></table></figure>
-<h3 id="zset-有序集合"><a href="#zset-有序集合" class="headerlink" title="zset 有序集合"></a>zset 有序集合</h3><p><code>zset和set一样也是string类型的集合，且item不可重复
-zset和set不同的地方在于zset关联一个double类型的分数，Redis通过分数对集合中的item排序
-zset的item是唯一的，但是分数是可以重复的</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;user&quot;:[</div><div class="line">	&quot;test1&quot;,</div><div class="line">	&quot;test2&quot;,</div><div class="line">	&quot;test3&quot;</div><div class="line">]</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/12/redis/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
