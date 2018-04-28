@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="cgi fastcgi php-fpm," />
+  <meta name="keywords" content="cgi,fastcgi,php-fpm," />
 
 
 
@@ -96,14 +96,14 @@
 
 
 <meta name="description" content="cgi定义  通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议.  web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。 好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处">
-<meta name="keywords" content="cgi fastcgi php-fpm">
+<meta name="keywords" content="cgi,fastcgi,php-fpm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php cgi">
 <meta property="og:url" content="http://www.dannisi.xin/2018/04/28/php-cgi/index.html">
 <meta property="og:site_name" content="Leo&#39;s Blog">
 <meta property="og:description" content="cgi定义  通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议.  web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。 好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-28T02:48:35.351Z">
+<meta property="og:updated_time" content="2018-04-28T02:59:03.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php cgi">
 <meta name="twitter:description" content="cgi定义  通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议.  web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。 好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处">
@@ -411,11 +411,13 @@
 <li>前面说了，php-fpm是php-cgi的进程管理器。</li>
 <li>这种交互方式实际上是让php-cgi以独立于httpd的方式存在，目前基本使用php-fpm的方式管理php-cgi进程。</li>
 <li>也就是说，这种模式下，php-cgi和httpd已经分离了，它们的分离意味着请求的动静分离变为可能：httpd和php-fpm分别运行在不同服务器上。</li>
-<li>动静分离后，压力也分散到各自的服务器上<br>###<br>*是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</li>
-<li>php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。</li>
+<li>动静分离后，压力也分散到各自的服务器上     </li>
 </ul>
-<hr>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>   当然,这些看完是不是一脸懵逼的, ps aux | grep php-fpm 你就能看到你想看到了,是不是php的进程都是被php-fpm掌控着</p>
+</blockquote>
+<p> ### </p>
+<blockquote>
+<p>*是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</p>
+<h2 id="php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。"><a href="#php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。" class="headerlink" title="* php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。"></a>* php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。</h2><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>   当然,这些看完是不是一脸懵逼的, ps aux | grep php-fpm 你就能看到你想看到了,是不是php的进程都是被php-fpm掌控着</p>
 </blockquote>
 
       
@@ -479,7 +481,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/cgi-fastcgi-php-fpm/" rel="tag"># cgi fastcgi php-fpm</a>
+            <a href="/tags/cgi/" rel="tag"># cgi</a>
+          
+            <a href="/tags/fastcgi/" rel="tag"># fastcgi</a>
+          
+            <a href="/tags/php-fpm/" rel="tag"># php-fpm</a>
           
         </div>
       
@@ -597,7 +603,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -703,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cgi"><span class="nav-number">1.</span> <span class="nav-text">cgi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fastcgi"><span class="nav-number">2.</span> <span class="nav-text">fastcgi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-fpm"><span class="nav-number">3.</span> <span class="nav-text">php-fpm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cgi"><span class="nav-number">1.</span> <span class="nav-text">cgi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fastcgi"><span class="nav-number">2.</span> <span class="nav-text">fastcgi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-fpm"><span class="nav-number">3.</span> <span class="nav-text">php-fpm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。"><span class="nav-number">4.</span> <span class="nav-text">* php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
