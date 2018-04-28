@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-04-12T08:03:41.958Z</updated>
+  <updated>2018-04-28T02:48:35.351Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php cgi</title>
+    <link href="http://www.dannisi.xin/2018/04/28/php-cgi/"/>
+    <id>http://www.dannisi.xin/2018/04/28/php-cgi/</id>
+    <published>2018-04-28T02:09:22.000Z</published>
+    <updated>2018-04-28T02:48:35.351Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="cgi"><a href="#cgi" class="headerlink" title="cgi"></a>cgi</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<ul>
+<li>通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议. </li>
+<li>web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。</li>
+<li>好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处理，那么他会把这个请求简单处理后交给PHP解析器。</li>
+<li>Nginx会传哪些数据给PHP解析器呢？url要有吧，查询字符串也得有吧，POST数据也要有，HTTP header不能少吧，好的，CGI就是规定要传哪些数据、以什么样的格式传递给后方处理这个请求的协议。</li>
+<li>仔细想想，你在PHP代码中使用的用户从哪里来的。</li>
+<li>当web server收到/index.php这个请求后，会启动对应的CGI程序，这里就是PHP的解析器。接下来PHP解析器会解析php.ini文件，初始化执行环境，然后处理请求，再以规定CGI规定的格式返回处理后的结果，退出进程。web server再把结果返回给浏览器</li>
+</ul>
+<hr>
+<h2 id="fastcgi"><a href="#fastcgi" class="headerlink" title="fastcgi"></a>fastcgi</h2></blockquote>
+<h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<ul>
+<li>也是一种协议，只不过是cgi的优化版.</li>
+</ul>
+</blockquote>
+<hr>
+<a id="more"></a>
+<h2 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<ul>
+<li>是对php-cgi的改进版，它直接管理多个php-cgi进程/线程.</li>
+<li>前面说了，php-fpm是php-cgi的进程管理器。</li>
+<li>这种交互方式实际上是让php-cgi以独立于httpd的方式存在，目前基本使用php-fpm的方式管理php-cgi进程。</li>
+<li>也就是说，这种模式下，php-cgi和httpd已经分离了，它们的分离意味着请求的动静分离变为可能：httpd和php-fpm分别运行在不同服务器上。</li>
+<li>动静分离后，压力也分散到各自的服务器上<br>###<br>*是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</li>
+<li>php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。</li>
+</ul>
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>   当然,这些看完是不是一脸懵逼的, ps aux | grep php-fpm 你就能看到你想看到了,是不是php的进程都是被php-fpm掌控着</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;cgi&quot;&gt;&lt;a href=&quot;#cgi&quot; class=&quot;headerlink&quot; title=&quot;cgi&quot;&gt;&lt;/a&gt;cgi&lt;/h2&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议. &lt;/li&gt;
+&lt;li&gt;web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。&lt;/li&gt;
+&lt;li&gt;好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处理，那么他会把这个请求简单处理后交给PHP解析器。&lt;/li&gt;
+&lt;li&gt;Nginx会传哪些数据给PHP解析器呢？url要有吧，查询字符串也得有吧，POST数据也要有，HTTP header不能少吧，好的，CGI就是规定要传哪些数据、以什么样的格式传递给后方处理这个请求的协议。&lt;/li&gt;
+&lt;li&gt;仔细想想，你在PHP代码中使用的用户从哪里来的。&lt;/li&gt;
+&lt;li&gt;当web server收到/index.php这个请求后，会启动对应的CGI程序，这里就是PHP的解析器。接下来PHP解析器会解析php.ini文件，初始化执行环境，然后处理请求，再以规定CGI规定的格式返回处理后的结果，退出进程。web server再把结果返回给浏览器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;fastcgi&quot;&gt;&lt;a href=&quot;#fastcgi&quot; class=&quot;headerlink&quot; title=&quot;fastcgi&quot;&gt;&lt;/a&gt;fastcgi&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h3 id=&quot;定义-1&quot;&gt;&lt;a href=&quot;#定义-1&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;也是一种协议，只不过是cgi的优化版.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="php" scheme="http://www.dannisi.xin/categories/php/"/>
+    
+    
+      <category term="cgi fastcgi php-fpm" scheme="http://www.dannisi.xin/tags/cgi-fastcgi-php-fpm/"/>
+    
+  </entry>
   
   <entry>
     <title>redis</title>
