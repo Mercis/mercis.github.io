@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-04-28T03:04:33.042Z</updated>
+  <updated>2018-04-28T03:07:39.174Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.dannisi.xin/2018/04/28/php-cgi/"/>
     <id>http://www.dannisi.xin/2018/04/28/php-cgi/</id>
     <published>2018-04-28T02:09:22.000Z</published>
-    <updated>2018-04-28T03:04:33.042Z</updated>
+    <updated>2018-04-28T03:07:39.174Z</updated>
     
     <content type="html"><![CDATA[<h2 id="cgi"><a href="#cgi" class="headerlink" title="cgi"></a>cgi</h2><blockquote>
 <ul>
@@ -46,7 +46,8 @@
 <li>前面说了，php-fpm是php-cgi的进程管理器。</li>
 <li>这种交互方式实际上是让php-cgi以独立于httpd的方式存在，目前基本使用php-fpm的方式管理php-cgi进程。</li>
 <li>也就是说，这种模式下，php-cgi和httpd已经分离了，它们的分离意味着请求的动静分离变为可能：httpd和php-fpm分别运行在不同服务器上。</li>
-<li>动静分离后，压力也分散到各自的服务器上<br>*是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</li>
+<li>动静分离后，压力也分散到各自的服务器上. </li>
+<li>是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</li>
 <li>php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。</li>
 </ul>
 </blockquote>

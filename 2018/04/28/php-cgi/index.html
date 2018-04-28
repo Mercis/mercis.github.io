@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Leo&#39;s Blog">
 <meta property="og:description" content="cgi  通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议.  web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。 好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处理，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-28T03:04:33.042Z">
+<meta property="og:updated_time" content="2018-04-28T03:07:39.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php cgi">
 <meta name="twitter:description" content="cgi  通用网关接口(啥意思?),我们可以认为他是已做协议,作为web服务处理请求的协议.  web server（比如说nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。 好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态文件，需要去找PHP解析器来处理，">
@@ -411,7 +411,8 @@
 <li>前面说了，php-fpm是php-cgi的进程管理器。</li>
 <li>这种交互方式实际上是让php-cgi以独立于httpd的方式存在，目前基本使用php-fpm的方式管理php-cgi进程。</li>
 <li>也就是说，这种模式下，php-cgi和httpd已经分离了，它们的分离意味着请求的动静分离变为可能：httpd和php-fpm分别运行在不同服务器上。</li>
-<li>动静分离后，压力也分散到各自的服务器上<br>*是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</li>
+<li>动静分离后，压力也分散到各自的服务器上. </li>
+<li>是的，修改php.ini之后，php-cgi进程的确是没办法平滑重启的。</li>
 <li>php-fpm对此的处理机制是新的worker用新的配置，已经存在的worker处理完手上的活就可以歇着了，通过这种机制来平滑过度。</li>
 </ul>
 </blockquote>
