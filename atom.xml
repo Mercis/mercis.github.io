@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-04-28T03:07:39.174Z</updated>
+  <updated>2018-07-10T09:10:41.229Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>yii2学习心得(二)</title>
+    <link href="http://www.dannisi.xin/2018/07/10/%E6%97%A5%E5%BF%97/"/>
+    <id>http://www.dannisi.xin/2018/07/10/日志/</id>
+    <published>2018-07-10T08:53:55.000Z</published>
+    <updated>2018-07-10T09:10:41.229Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p> 日志文件按照等级分为（error waring info），在写程序的过程中经常需要我们输出日志，当然我们也想自定义设置日志。</p>
+<hr>
+<h2 id="一-yii2-配置log"><a href="#一-yii2-配置log" class="headerlink" title="一 yii2 配置log"></a>一 yii2 配置log</h2><p> 以yii高级版为例，经常会在api目录打印日志，之前有个坑就是把打印的日志跟输出的结果都给了前端，前端调了半天，差点哭了。<br> 不多说了，上代码：<br> main.php:<br> [<br>   ‘class’ =&gt; ‘yii\log\FileTarget’,<br>   ‘levels’ =&gt; [‘info’],//记录日志的级别<br>   ‘logFile’ =&gt; ‘@api/runtime/logs/‘ . date(‘Y-m-d’) . ‘_info.log’,<br>   ‘categories’ =&gt; [‘自定义’],//自定义日志<br> ],</p>
+<hr>
+<a id="more"></a>
+<h2 id="二-输出日志"><a href="#二-输出日志" class="headerlink" title="二 输出日志"></a>二 输出日志</h2><p> controller里，你需要打印的地方，加上Yii::info($message,$categories);<br> 是不是很简单。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt; 日志文件按照等级分为（error waring info），在写程序的过程中经常需要我们输出日志，当然我们也想自定义设置日志。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;一-yii2-配置log&quot;&gt;&lt;a href=&quot;#一-yii2-配置log&quot; class=&quot;headerlink&quot; title=&quot;一 yii2 配置log&quot;&gt;&lt;/a&gt;一 yii2 配置log&lt;/h2&gt;&lt;p&gt; 以yii高级版为例，经常会在api目录打印日志，之前有个坑就是把打印的日志跟输出的结果都给了前端，前端调了半天，差点哭了。&lt;br&gt; 不多说了，上代码：&lt;br&gt; main.php:&lt;br&gt; [&lt;br&gt;   ‘class’ =&amp;gt; ‘yii\log\FileTarget’,&lt;br&gt;   ‘levels’ =&amp;gt; [‘info’],//记录日志的级别&lt;br&gt;   ‘logFile’ =&amp;gt; ‘@api/runtime/logs/‘ . date(‘Y-m-d’) . ‘_info.log’,&lt;br&gt;   ‘categories’ =&amp;gt; [‘自定义’],//自定义日志&lt;br&gt; ],&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://www.dannisi.xin/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="yii" scheme="http://www.dannisi.xin/tags/yii/"/>
+    
+      <category term="log" scheme="http://www.dannisi.xin/tags/log/"/>
+    
+  </entry>
   
   <entry>
     <title>php cgi</title>
