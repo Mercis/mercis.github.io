@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="yii,Cross Domain," />
 
 
 
@@ -95,17 +95,22 @@
 
 
 
-<meta name="description" content="李丹 个人格言: 好好干,天天有米饭!个人说明: 一个退伍的PHP工程师谷歌账户: lidan5445@gmail.com个人主页: http://www.dannisi.xin">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="http://www.dannisi.xin/about/index.html">
+<meta name="description" content="简介最近公司想提升档次,就拿我们的PC页面开刀(我觉得YII自带的views蛮好的啊,前端插件也很多),没办法, 只能改了,遇到了一个坑就是跨域.">
+<meta name="keywords" content="yii,Cross Domain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yii2+vue跨域问题解决">
+<meta property="og:url" content="http://www.dannisi.xin/2018/09/20/Yii2-vue跨域问题解决/index.html">
 <meta property="og:site_name" content="Leo&#39;s Blog">
-<meta property="og:description" content="李丹 个人格言: 好好干,天天有米饭!个人说明: 一个退伍的PHP工程师谷歌账户: lidan5445@gmail.com个人主页: http://www.dannisi.xin">
+<meta property="og:description" content="简介最近公司想提升档次,就拿我们的PC页面开刀(我觉得YII自带的views蛮好的啊,前端插件也很多),没办法, 只能改了,遇到了一个坑就是跨域.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-23T06:59:20.957Z">
+<meta property="og:image" content="http://www.dannisi.xin/images/ky_1.jpg">
+<meta property="og:image" content="http://www.dannisi.xin/images/ky_2.jpg">
+<meta property="og:image" content="http://www.dannisi.xin/images/ky_3.jpg">
+<meta property="og:updated_time" content="2018-09-20T02:06:58.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="李丹 个人格言: 好好干,天天有米饭!个人说明: 一个退伍的PHP工程师谷歌账户: lidan5445@gmail.com个人主页: http://www.dannisi.xin">
+<meta name="twitter:title" content="Yii2+vue跨域问题解决">
+<meta name="twitter:description" content="简介最近公司想提升档次,就拿我们的PC页面开刀(我觉得YII自带的views蛮好的啊,前端插件也很多),没办法, 只能改了,遇到了一个坑就是跨域.">
+<meta name="twitter:image" content="http://www.dannisi.xin/images/ky_1.jpg">
 
 
 
@@ -133,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://www.dannisi.xin/about/"/>
+  <link rel="canonical" href="http://www.dannisi.xin/2018/09/20/Yii2-vue跨域问题解决/"/>
 
 
 
 
 
-  <title>关于我 | Leo's Blog</title>
+  <title>Yii2+vue跨域问题解决 | Leo's Blog</title>
   
 
 
@@ -269,19 +274,330 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.dannisi.xin/2018/09/20/Yii2-vue跨域问题解决/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Yii2+vue跨域问题解决</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T09:19:16+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/09/20/Yii2-vue跨域问题解决/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/09/20/Yii2-vue跨域问题解决/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/09/20/Yii2-vue跨域问题解决/" class="leancloud_visitors" data-flag-title="Yii2+vue跨域问题解决">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-      <h2 id="李丹"><a href="#李丹" class="headerlink" title="李丹"></a>李丹</h2><hr>
-<h2 id="个人格言-好好干-天天有米饭"><a href="#个人格言-好好干-天天有米饭" class="headerlink" title="个人格言: 好好干,天天有米饭!"></a>个人格言: 好好干,天天有米饭!</h2><h2 id="个人说明-一个退伍的PHP工程师"><a href="#个人说明-一个退伍的PHP工程师" class="headerlink" title="个人说明: 一个退伍的PHP工程师"></a>个人说明: 一个退伍的PHP工程师</h2><h2 id="谷歌账户-lidan5445-gmail-com"><a href="#谷歌账户-lidan5445-gmail-com" class="headerlink" title="谷歌账户: lidan5445@gmail.com"></a>谷歌账户: lidan5445@gmail.com</h2><h2 id="个人主页-http-www-dannisi-xin"><a href="#个人主页-http-www-dannisi-xin" class="headerlink" title="个人主页: http://www.dannisi.xin"></a>个人主页: <a href="http://www.dannisi.xin">http://www.dannisi.xin</a></h2>
-    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><pre><code>最近公司想提升档次,就拿我们的PC页面开刀(我觉得YII自带的views蛮好的啊,前端插件也很多),没办法,
+只能改了,遇到了一个坑就是跨域.
+</code></pre><a id="more"></a>
+<h3 id="跨域和同源"><a href="#跨域和同源" class="headerlink" title="跨域和同源"></a>跨域和同源</h3><h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域:"></a>跨域:</h4><pre><code>就是跨域名，跨端口，跨协议
+
+     例如：如果有两个服务器，服务器A和服务器B,服务器A上存储了php数据，script,甚至是css这些文件，而你在服务器B上只写了html，然后你所在的服务器B上动态创建script，css，php数据(使用ajax请求),向服务器A上请求你想要的script,css，php数请求据(使用ajax)这些文件，请求这些文件后，你再在服务器B上运行你的html，虽然你的地址是在服务器B上，但是你还是可以运行效果与在服务器A上运行的效果是一样的，这样就是跨域名，跨端口，跨协议，实现了跨域。
+
+　　简单来说，就是你请求的文件，只要含有“src”,“href”这些属性，你就能在其他服务器上，请求你所需要的文件，然后在自己的服务器上运行，就实现了跨域（跨域名，跨端口，跨协议）。
+
+原生的动态请求script文件 
+
+　　var _script = document.createElement(&quot;script&quot;);
+　　_script.src=&quot;http://10.9.156.108/html5/Ajax/api/sendMessage.php?user=&quot;+_user+&quot;message=&quot;+_message;
+　　_script.type=&quot;text/javascript&quot;;
+
+jQuery跨域请求script文件
+
+$(document).ready(function(){
+　　//getJSON 后面带参数，如果不带参数默认不跨域 ，带了参数跨域
+
+　　//跨域优先
+　　$.&lt;link rel=&quot;icon&quot; href=&quot;../img/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;(&quot;http://10.9.156.108/HTML5/lesson24/test.js?callback=?&quot;,[data],function(){});
+
+　　//跨域  有getJSON 和 jsonp 两种方式(当然,我们现在说说别的)
+　　$.get(&quot;http://10.9.156.108/HTML5/lesson24/test.js=&quot;,null,function(){},&quot;jsonp&quot;);
+　　　
+}); 
+</code></pre><h4 id="同源"><a href="#同源" class="headerlink" title="同源:"></a>同源:</h4><pre><code>就是同域名，同端口，同协议
+
+例如：如果你有一个服务器A，你所需要的script，css，php文件都在服务器A，你写的html也在服务器A上，然后运行，出现了效果，如果你想在另一台电脑上运行你的项目（注意另一台电脑无论有没有开启服务器，效果还是会显示出来的），只要把你写在服务器A上的协议，域名，端口以及你的项目名称复制下来，在另一台电脑上运行，同样会出现相同的效果，这就实现了同源。
+</code></pre><h3 id="Yii2-vue-js"><a href="#Yii2-vue-js" class="headerlink" title="Yii2 + vue.js"></a>Yii2 + vue.js</h3><h4 id="yii2写接口-无需验证-vue写前端"><a href="#yii2写接口-无需验证-vue写前端" class="headerlink" title="yii2写接口(无需验证),vue写前端"></a>yii2写接口(无需验证),vue写前端</h4><pre><code>1.apache服务器:
+啥都不要配置,vue那个写个代理配置就行
+
+2.nginx服务器
+加个几行header配置:
+add_header Access-Control-Allow-Origin *;
+add_header Access-Control-Allow-Headers X-Requested-With;
+add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
+</code></pre><h4 id="yii2-restful-token验证-vue前端"><a href="#yii2-restful-token验证-vue前端" class="headerlink" title="yii2+restful+token验证,vue前端"></a>yii2+restful+token验证,vue前端</h4><pre><code>这个还是比较重要的,流着泪填坑......
+</code></pre><blockquote>
+<ul>
+<li>这里我们的前端同学们就可以喝喝茶,当个吃瓜群众了.</li>
+<li><p>当页面上出现类似的报错,恭喜你,请跟我来.<br><img src="/images/ky_1.jpg" alt="跨域"><br><img src="/images/ky_2.jpg" alt="跨域"></p>
+</li>
+<li><p>经过一系列的挣扎,最后总结如下(借鉴了一名无名同学)</p>
+</li>
+</ul>
+</blockquote>
+<pre><code>1.我们这里首先把nginx配置给注释掉
+
+2.配置响应头 项目config目录main.php中
+&apos;response&apos; =&gt; [
+      &apos;class&apos; =&gt; &apos;yii\web\Response&apos;,
+      &apos;on beforeSend&apos; =&gt; function ($event) {
+          $response = $event-&gt;sender;
+          $response-&gt;format = yii\web\Response::FORMAT_JSON;
+          $code = $response-&gt;getStatusCode();
+          if ($code == 401) {
+              $response-&gt;data = [
+                  &apos;code&apos; =&gt; 401,
+                  &apos;msg&apos; =&gt; &apos;token 验证失败^-^.&apos;
+              ];
+          }
+          $msg = !empty($response-&gt;data[&apos;msg&apos;]) ? $response-&gt;data[&apos;msg&apos;] : yii\web\Response::$httpStatuses[$code];
+          $code = !empty($response-&gt;data[&apos;code&apos;]) ? $response-&gt;data[&apos;code&apos;] : $code;
+          $data = !empty($response-&gt;data[&apos;data&apos;]) ? $response-&gt;data[&apos;data&apos;] : [];
+          ##### 从这里开始 #####
+          $response-&gt;headers-&gt;set(&apos;Access-Control-Allow-Origin&apos;, &apos;*&apos;);
+          $response-&gt;headers-&gt;set(&apos;Access-Control-Allow-Methods&apos;, &apos;GET,POST,OPTIONS&apos;);
+          $response-&gt;headers-&gt;set(&apos;Access-Control-Request-Headers&apos;, &apos;Origin,X-Requested-With, Content-Type, Accept, Token&apos;);
+          //这两个很重要,token在header必须要这样设置
+          $response-&gt;headers-&gt;set(&apos;Access-Control-Expose-Headers&apos;, &apos;token&apos;);
+          $response-&gt;headers-&gt;set(&apos;Access-Control-Allow-Headers&apos;, &apos;token&apos;);
+          //加这个是为了骗过OPTIONS请求
+          if (Yii::$app-&gt;request-&gt;getMethod() == &apos;OPTIONS&apos;) {
+              $response-&gt;setStatusCode(200);
+          }
+
+          $response-&gt;data = renderJSON($msg, $data, $code);
+      },
+  ],
+
+3. 在自定义的基础控制器:
+public function behaviors()
+{
+    #这个是我需要用token验证
+    $behaviors = ArrayHelper::merge(parent::behaviors(), [
+        &apos;authenticator&apos; =&gt; [
+            &apos;class&apos; =&gt; QueryParamAuth::className(),
+            &apos;tokenParam&apos; =&gt; &apos;token&apos;,
+        ]
+    ]);
+    #这是将验证器赋值给变量,删除验证
+    $auth = $behaviors[&apos;authenticator&apos;];
+    unset($behaviors[&apos;authenticator&apos;]);
+    #这里是跨域设置
+    $behaviors[&apos;corsFilter&apos;] = [
+        &apos;class&apos; =&gt; \yii\filters\Cors::className(),
+    ];
+    #当跳过跨域之后,要对请求的URL进行token验证
+    $behaviors[&apos;authenticator&apos;] = $auth;
+    $behaviors[&apos;authenticator&apos;][&apos;except&apos;] = [&apos;options&apos;];
+    return $behaviors;
+}
+</code></pre><p><img src="/images/ky_3.jpg" alt="跨域">    </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre><code>面对这些问题,尽量在后端解决,公司里的前端小伙伴太少了,好好珍惜...
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/weixin.JPG" alt="Leo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的二维码，成为好友吧！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        <div class="copyright">
+          <p>
+          <span>
+          <b>本文地址：</b><a href="/2018/09/20/Yii2-vue跨域问题解决/" title="Yii2+vue跨域问题解决">http://www.dannisi.xin/2018/09/20/Yii2-vue跨域问题解决/</a><br/><b>转载请注明出处，谢谢！</b>
+          </span>
+          </p>
+        </div>
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weipay.JPG" alt="Leo WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zfbpay.JPG" alt="Leo Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/yii/" rel="tag"># yii</a>
+          
+            <a href="/tags/Cross-Domain/" rel="tag"># Cross Domain</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/11/Yii2插件使用/" rel="next" title="Yii2插件使用">
+                <i class="fa fa-chevron-left"></i> Yii2插件使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -469,7 +785,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#李丹"><span class="nav-number">1.</span> <span class="nav-text">李丹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人格言-好好干-天天有米饭"><span class="nav-number">2.</span> <span class="nav-text">个人格言: 好好干,天天有米饭!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人说明-一个退伍的PHP工程师"><span class="nav-number">3.</span> <span class="nav-text">个人说明: 一个退伍的PHP工程师</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌账户-lidan5445-gmail-com"><span class="nav-number">4.</span> <span class="nav-text">谷歌账户: lidan5445@gmail.com</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人主页-http-www-dannisi-xin"><span class="nav-number">5.</span> <span class="nav-text">个人主页: http://www.dannisi.xin</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域和同源"><span class="nav-number">2.</span> <span class="nav-text">跨域和同源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域"><span class="nav-number">2.1.</span> <span class="nav-text">跨域:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同源"><span class="nav-number">2.2.</span> <span class="nav-text">同源:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Yii2-vue-js"><span class="nav-number">3.</span> <span class="nav-text">Yii2 + vue.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#yii2写接口-无需验证-vue写前端"><span class="nav-number">3.1.</span> <span class="nav-text">yii2写接口(无需验证),vue写前端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yii2-restful-token验证-vue前端"><span class="nav-number">3.2.</span> <span class="nav-text">yii2+restful+token验证,vue前端</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -616,10 +932,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
