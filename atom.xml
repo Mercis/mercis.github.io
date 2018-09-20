@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-09-20T02:06:58.439Z</updated>
+  <updated>2018-09-20T06:55:17.787Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.dannisi.xin/2018/09/20/Yii2-vue%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>http://www.dannisi.xin/2018/09/20/Yii2-vue跨域问题解决/</id>
     <published>2018-09-20T01:19:16.000Z</published>
-    <updated>2018-09-20T02:06:58.439Z</updated>
+    <updated>2018-09-20T06:55:17.787Z</updated>
     
     <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><pre><code>最近公司想提升档次,就拿我们的PC页面开刀(我觉得YII自带的views蛮好的啊,前端插件也很多),没办法,
 只能改了,遇到了一个坑就是跨域.
@@ -64,10 +64,13 @@ add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
 </code></pre><blockquote>
 <ul>
 <li>这里我们的前端同学们就可以喝喝茶,当个吃瓜群众了.</li>
-<li><p>当页面上出现类似的报错,恭喜你,请跟我来.<br><img src="/images/ky_1.jpg" alt="跨域"><br><img src="/images/ky_2.jpg" alt="跨域"></p>
-</li>
-<li><p>经过一系列的挣扎,最后总结如下(借鉴了一名无名同学)</p>
-</li>
+<li>当页面上出现类似的报错,恭喜你,请跟我来.</li>
+</ul>
+</blockquote>
+<p><img src="/images/ky_1.png" alt="跨域"><br><img src="/images/ky_2.png" alt="跨域"></p>
+<blockquote>
+<ul>
+<li>经过一系列的挣扎,最后总结如下(借鉴了一名无名同学)</li>
 </ul>
 </blockquote>
 <pre><code>1.我们这里首先把nginx配置给注释掉
