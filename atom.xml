@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-07-11T05:57:49.100Z</updated>
+  <updated>2018-08-27T06:38:09.579Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -20,56 +20,83 @@
     <link href="http://www.dannisi.xin/2018/07/11/Yii2%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
     <id>http://www.dannisi.xin/2018/07/11/Yii2插件使用/</id>
     <published>2018-07-11T02:14:44.000Z</published>
-    <updated>2018-07-11T05:57:49.100Z</updated>
+    <updated>2018-08-27T06:38:09.579Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>后面几篇文章分享一下常用一些YII2的插件，尤其是一些前端插件，用了都说好</p>
-<hr>
-<h2 id="一-时间选择器"><a href="#一-时间选择器" class="headerlink" title="一 时间选择器"></a>一 时间选择器</h2><p>使用的是 ：kartik-v/yii2-widget-datepicker，可能会很熟悉这个组织的强大。</p>
-<a id="more"></a>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
-<li><p>为什么要它呢？当然你自己写时间选择器也行，我觉得吧，重复造轮子的时间不如喝喝茶呢。</p>
-</li>
-<li><p>这个插件通常我会用在index（数据筛选用）、form（参数）。</p>
-</li>
-<li><p>index 中<br>如果你用的是gridview 代码就这样<br> use kartik\date\DatePicker;<br> [</p>
-<pre><code>&apos;label&apos; =&gt; &apos;任务时间&apos;,
-&apos;attribute&apos; =&gt; &apos;start_at&apos;,
-&apos;value&apos; =&gt; function ($model) {
-    return date(&apos;Y-m-d H:i:s&apos;, $model-&gt;start_at) . &apos;~~~&apos; . date(&apos;Y-m-d H:i:s&apos;, $model-&gt;end_at);
-},
-&apos;filter&apos; =&gt; DatePicker::widget([    // 日期组件
-    &apos;model&apos; =&gt; $searchModel,
-    &apos;language&apos; =&gt; Yii::$app-&gt;language,
-    &apos;attribute&apos; =&gt; &apos;start_at&apos;,
-    &apos;value&apos; =&gt; $searchModel-&gt;start_at,
-    &apos;options&apos; =&gt; [&apos;readonly&apos; =&gt; true],
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>后面几篇文章分享一下常用一些YII2的插件，尤其是一些前端插件，用了都说好
+</code></pre><hr>
+<h2 id="一-时间选择器"><a href="#一-时间选择器" class="headerlink" title="一 时间选择器"></a>一 时间选择器</h2><pre><code>使用的是 ：kartik-v/yii2-widget-datepicker，可能会很熟悉这个组织的强大。
+</code></pre><a id="more"></a>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>1. 为什么要它呢？当然你自己写时间选择器也行，我觉得吧，重复造轮子的时间不如喝喝茶呢。
+
+2. 这个插件通常我会用在index（数据筛选用）、form（参数）。
+
+3. index 中
+如果你用的是gridview 代码就这样
+    use kartik\date\DatePicker; 
+    [
+        &apos;label&apos; =&gt; &apos;任务时间&apos;,
+        &apos;attribute&apos; =&gt; &apos;start_at&apos;,
+        &apos;value&apos; =&gt; function ($model) {
+            return date(&apos;Y-m-d H:i:s&apos;, $model-&gt;start_at) . &apos;~~~&apos; . date(&apos;Y-m-d H:i:s&apos;, $model-&gt;end_at);
+        },
+        &apos;filter&apos; =&gt; DatePicker::widget([    // 日期组件
+            &apos;model&apos; =&gt; $searchModel,
+            &apos;language&apos; =&gt; Yii::$app-&gt;language,
+            &apos;attribute&apos; =&gt; &apos;start_at&apos;,
+            &apos;value&apos; =&gt; $searchModel-&gt;start_at,
+            &apos;options&apos; =&gt; [&apos;readonly&apos; =&gt; true],
+            &apos;pluginOptions&apos; =&gt; [
+                &apos;autoclose&apos; =&gt; true,
+                &apos;format&apos; =&gt; &apos;yyyy-mm-dd&apos;,
+                &apos;todayHighlight&apos; =&gt; true,
+            ]
+        ])
+    ],
+
+4. form 中
+    use kartik\date\DatePicker;
+    &lt;?= $form-&gt;field($model, &apos;start_at&apos;)-&gt;label(&apos;开始时间&apos;)-&gt;widget(DatePicker::className(), [
+        &apos;options&apos; =&gt; [&apos;placeholder&apos; =&gt; &apos;&apos;],
+        &apos;pluginOptions&apos; =&gt; [
+            &apos;autoclose&apos; =&gt; true,
+            &apos;format&apos; =&gt; &apos;yyyy-mm-dd&apos;,
+            &apos;todayHighlight&apos; =&gt; true,
+        ]
+    ]); ?&gt;
+</code></pre><hr>
+<h2 id="二-select2"><a href="#二-select2" class="headerlink" title="二 select2"></a>二 select2</h2><pre><code>这个插件在开发过程中会经常用到,尤其是在有多选的需求时
+还是这个组织的\kartik\select2\Select2
+</code></pre><h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><pre><code>&lt;?php
+#已保存的
+$model-&gt;item = $item_hash;
+echo $form-&gt;field($model, &apos;item&apos;)-&gt;label(false)-&gt;widget(\kartik\select2\Select2::classname(), [
+    &apos;name&apos; =&gt; &apos;属性名称&apos;,
+     #
+    &apos;data&apos; =&gt; $item_hash,
+    &apos;language&apos; =&gt; &apos;cn&apos;,
+    &apos;maintainOrder&apos; =&gt; true,
+    &apos;toggleAllSettings&apos; =&gt; [
+        &apos;selectLabel&apos; =&gt; &apos;&lt;i class =&quot;glyphicon glyphicon-ok-circle&quot;&gt;&lt;/i&gt;标记全部&apos;,
+        &apos;unselectLabel&apos; =&gt; &apos;&lt;i class =&quot;glyphicon glyphicon-remove-circle&quot;&gt; &lt;/i&gt;取消全部&apos;,
+        &apos;selectOptions&apos; =&gt; [&apos;class&apos; =&gt; &apos;text-success&apos;],
+        &apos;unselectOptions&apos; =&gt; [&apos;class&apos; =&gt; &apos;text-danger&apos;],
+    ],
+    &apos;options&apos; =&gt; [&apos;placeholder&apos; =&gt; &apos;属性名称...&apos;, &apos;multiple&apos; =&gt; true],
     &apos;pluginOptions&apos; =&gt; [
-        &apos;autoclose&apos; =&gt; true,
-        &apos;format&apos; =&gt; &apos;yyyy-mm-dd&apos;,
-        &apos;todayHighlight&apos; =&gt; true,
-    ]
-])
-</code></pre><p> ],</p>
-</li>
-<li><p>form 中<br> use kartik\date\DatePicker;<br> &lt;?= $form-&gt;field($model, ‘start_at’)-&gt;label(‘开始时间’)-&gt;widget(DatePicker::className(), [</p>
-<pre><code>&apos;options&apos; =&gt; [&apos;placeholder&apos; =&gt; &apos;&apos;],
-&apos;pluginOptions&apos; =&gt; [
-    &apos;autoclose&apos; =&gt; true,
-    &apos;format&apos; =&gt; &apos;yyyy-mm-dd&apos;,
-    &apos;todayHighlight&apos; =&gt; true,
-]
-</code></pre><p> ]); ?&gt;</p>
-</li>
-</ol>
-<hr>
+        &apos;tags&apos; =&gt; true,
+    ],
+]);
+?&gt;
+</code></pre><p> 附上效果图:<br> <img src="/images/xiaoguotu1.jpg" alt="select2"><br> <img src="/images/xiaoguotu2.jpg" alt="select2"></p>
 <p> 未完待续。。。。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;后面几篇文章分享一下常用一些YII2的插件，尤其是一些前端插件，用了都说好&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;一-时间选择器&quot;&gt;&lt;a href=&quot;#一-时间选择器&quot; class=&quot;headerlink&quot; title=&quot;一 时间选择器&quot;&gt;&lt;/a&gt;一 时间选择器&lt;/h2&gt;&lt;p&gt;使用的是 ：kartik-v/yii2-widget-datepicker，可能会很熟悉这个组织的强大。&lt;/p&gt;
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;后面几篇文章分享一下常用一些YII2的插件，尤其是一些前端插件，用了都说好
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&quot;一-时间选择器&quot;&gt;&lt;a href=&quot;#一-时间选择器&quot; class=&quot;headerlink&quot; title=&quot;一 时间选择器&quot;&gt;&lt;/a&gt;一 时间选择器&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;使用的是 ：kartik-v/yii2-widget-datepicker，可能会很熟悉这个组织的强大。
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
