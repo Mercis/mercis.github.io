@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-11-10T02:22:35.108Z</updated>
+  <updated>2018-11-10T05:07:15.714Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MAC手动编译程序和扩展</title>
+    <title>MAC手动编译软件和扩展</title>
     <link href="http://www.dannisi.xin/2018/11/10/MAC%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E5%92%8C%E6%89%A9%E5%B1%95/"/>
     <id>http://www.dannisi.xin/2018/11/10/MAC手动编译程序和扩展/</id>
     <published>2018-11-10T01:20:16.000Z</published>
-    <updated>2018-11-10T02:22:35.108Z</updated>
+    <updated>2018-11-10T05:07:15.714Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>18年开始新版的homebrew已经去掉了很多扩展,只好手动编译了.
 </code></pre><hr>
@@ -69,7 +69,7 @@ vi .bash_profile 写入
 出现cp: /usr/lib/php/extensions/non-debug-.../swoole.so Operation not permitted 不要慌
 重启电脑:按住Command＋R 进入恢复模式，打开terminal，键入：csrutil disable
 cp swoole.so /usr/lib/php/extensions/non-debug-.../
-要重新恢复，按住Command＋R 进入恢复模式，打开terminal，键入:csrutil disable
+要重新恢复，按住Command＋R 进入恢复模式，打开terminal，键入:csrutil enable
 这个是Mac系统防止恶意修改文件
 </code></pre><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><pre><code>整完一次,下次装别的扩展也不用过分依赖brew了,前提是要自己管理好软件和扩展的安装位置    
 </code></pre>]]></content>
