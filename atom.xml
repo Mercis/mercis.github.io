@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-09-20T06:55:17.787Z</updated>
+  <updated>2018-11-10T02:22:35.108Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -14,6 +14,95 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MAC手动编译程序和扩展</title>
+    <link href="http://www.dannisi.xin/2018/11/10/MAC%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E5%92%8C%E6%89%A9%E5%B1%95/"/>
+    <id>http://www.dannisi.xin/2018/11/10/MAC手动编译程序和扩展/</id>
+    <published>2018-11-10T01:20:16.000Z</published>
+    <updated>2018-11-10T02:22:35.108Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>18年开始新版的homebrew已经去掉了很多扩展,只好手动编译了.
+</code></pre><hr>
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="一-配置与环境"><a href="#一-配置与环境" class="headerlink" title="一 配置与环境"></a>一 配置与环境</h3><pre><code>MAC OS : 10.13
+PHP    : PHP7.1
+gcc    : gcc4.9
+swoole : swoole4.2
+
+环境依赖:
+仅支持 Linux、FreeBSD、MacOS 三种操作系统
+在Windows平台，可使用CygWin或WSL(Windows Subsystem for Linux)
+Linux 内核版本 2.3.32 以上
+gcc4.4 以上版本或者clang
+4.x版本起需要gcc-4.8或更高版本, 编译失败请先尝试升级gcc
+编译为 libswoole.so 作为 C/C++ 库时需要使用 cmake-2.4 或更高版本
+建议使用 Ubuntu14、CentOS7 或更高版本的操作系统
+</code></pre><a id="more"></a>
+<pre><code>PHP版本依赖:
+Swoole-1.x需要 PHP-5.3.10 或更高版本
+Swoole-2.x需要 PHP-7.0.0 或更高版本
+Swoole-4.x需要 PHP-7.1.0 或更高版本
+不依赖 PHP 的 stream、sockets、pcntl、posix、sysvmsg 等扩展。PHP 只需安装最基本的扩展即可
+</code></pre><h3 id="二-编译"><a href="#二-编译" class="headerlink" title="二 编译"></a>二 编译</h3><pre><code>1.下载swoole
+https://github.com/swoole/swoole-src/releases
+我的电脑是Mac自带PHP7.1,果断选择最新的4.2装起来
+2.升级gcc(非必须)
+swoole4.x需要更高的gcc版本,如果你装swoole2.x或者swoole1.x Mac自带的4.2完全能搞定.
+&gt; 查看gcc版本
+brew search gcc
+&gt; 安装gcc
+brew install gcc@4.9
+&gt; 设置环境变量
+vi .bash_profile 写入
+    alias gcc=&quot;gcc-4.9&quot;
+    alias g++=&quot;g++-4.9&quot;
+    alias cc=&quot;gcc-4.9&quot;
+    alias c++=&quot;c++-4.9&quot;
+
+3.编译安装
+&gt; cd swoole-4.2.6 (解压好的文件的目录)
+&gt; phpize
+提示Cannot find autoconf. Please check your autoconf installation and the  $PHP_AUTOCONF environment variable. Then, rerun this script.
+解决方法: brew install autoconf
+&gt; ./configure --with-php-config=/usr/bin/php-config
+&gt; make &amp;&amp; sudo make install
+出现cp: /usr/lib/php/extensions/non-debug-.../swoole.so Operation not permitted 不要慌
+重启电脑:按住Command＋R 进入恢复模式，打开terminal，键入：csrutil disable
+cp swoole.so /usr/lib/php/extensions/non-debug-.../
+要重新恢复，按住Command＋R 进入恢复模式，打开terminal，键入:csrutil disable
+这个是Mac系统防止恶意修改文件
+</code></pre><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><pre><code>整完一次,下次装别的扩展也不用过分依赖brew了,前提是要自己管理好软件和扩展的安装位置    
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;18年开始新版的homebrew已经去掉了很多扩展,只好手动编译了.
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&quot;编译安装&quot;&gt;&lt;a href=&quot;#编译安装&quot; class=&quot;headerlink&quot; title=&quot;编译安装&quot;&gt;&lt;/a&gt;编译安装&lt;/h2&gt;&lt;h3 id=&quot;一-配置与环境&quot;&gt;&lt;a href=&quot;#一-配置与环境&quot; class=&quot;headerlink&quot; title=&quot;一 配置与环境&quot;&gt;&lt;/a&gt;一 配置与环境&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;MAC OS : 10.13
+PHP    : PHP7.1
+gcc    : gcc4.9
+swoole : swoole4.2
+
+环境依赖:
+仅支持 Linux、FreeBSD、MacOS 三种操作系统
+在Windows平台，可使用CygWin或WSL(Windows Subsystem for Linux)
+Linux 内核版本 2.3.32 以上
+gcc4.4 以上版本或者clang
+4.x版本起需要gcc-4.8或更高版本, 编译失败请先尝试升级gcc
+编译为 libswoole.so 作为 C/C++ 库时需要使用 cmake-2.4 或更高版本
+建议使用 Ubuntu14、CentOS7 或更高版本的操作系统
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://www.dannisi.xin/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="MAC" scheme="http://www.dannisi.xin/tags/MAC/"/>
+    
+      <category term="swoole" scheme="http://www.dannisi.xin/tags/swoole/"/>
+    
+  </entry>
   
   <entry>
     <title>Yii2+vue跨域问题解决</title>
