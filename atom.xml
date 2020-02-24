@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dannisi.xin/"/>
-  <updated>2018-11-10T05:07:15.714Z</updated>
+  <updated>2018-11-10T05:07:14.000Z</updated>
   <id>http://www.dannisi.xin/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.dannisi.xin/2018/11/10/MAC%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E5%92%8C%E6%89%A9%E5%B1%95/"/>
     <id>http://www.dannisi.xin/2018/11/10/MAC手动编译程序和扩展/</id>
     <published>2018-11-10T01:20:16.000Z</published>
-    <updated>2018-11-10T05:07:15.714Z</updated>
+    <updated>2018-11-10T05:07:14.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>18年开始新版的homebrew已经去掉了很多扩展,只好手动编译了.
 </code></pre><hr>
@@ -109,7 +109,7 @@ gcc4.4 以上版本或者clang
     <link href="http://www.dannisi.xin/2018/09/20/Yii2-vue%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>http://www.dannisi.xin/2018/09/20/Yii2-vue跨域问题解决/</id>
     <published>2018-09-20T01:19:16.000Z</published>
-    <updated>2018-09-20T06:55:17.787Z</updated>
+    <updated>2018-09-20T06:55:16.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><pre><code>最近公司想提升档次,就拿我们的PC页面开刀(我觉得YII自带的views蛮好的啊,前端插件也很多),没办法,
 只能改了,遇到了一个坑就是跨域.
@@ -244,7 +244,7 @@ public function behaviors()
     <link href="http://www.dannisi.xin/2018/07/11/Yii2%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
     <id>http://www.dannisi.xin/2018/07/11/Yii2插件使用/</id>
     <published>2018-07-11T02:14:44.000Z</published>
-    <updated>2018-08-27T06:38:09.579Z</updated>
+    <updated>2018-08-27T06:38:08.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>后面几篇文章分享一下常用一些YII2的插件，尤其是一些前端插件，用了都说好
 </code></pre><hr>
@@ -338,7 +338,7 @@ echo $form-&gt;field($model, &apos;item&apos;)-&gt;label(false)-&gt;widget(\kart
     <link href="http://www.dannisi.xin/2018/07/10/%E6%97%A5%E5%BF%97/"/>
     <id>http://www.dannisi.xin/2018/07/10/日志/</id>
     <published>2018-07-10T08:53:55.000Z</published>
-    <updated>2018-07-10T09:10:41.229Z</updated>
+    <updated>2018-07-10T09:10:40.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p> 日志文件按照等级分为（error waring info），在写程序的过程中经常需要我们输出日志，当然我们也想自定义设置日志。</p>
@@ -373,7 +373,7 @@ echo $form-&gt;field($model, &apos;item&apos;)-&gt;label(false)-&gt;widget(\kart
     <link href="http://www.dannisi.xin/2018/04/28/php-cgi/"/>
     <id>http://www.dannisi.xin/2018/04/28/php-cgi/</id>
     <published>2018-04-28T02:09:22.000Z</published>
-    <updated>2018-04-28T03:07:39.174Z</updated>
+    <updated>2018-04-28T03:07:38.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="cgi"><a href="#cgi" class="headerlink" title="cgi"></a>cgi</h2><blockquote>
 <ul>
@@ -446,7 +446,7 @@ echo $form-&gt;field($model, &apos;item&apos;)-&gt;label(false)-&gt;widget(\kart
     <link href="http://www.dannisi.xin/2018/04/12/redis/"/>
     <id>http://www.dannisi.xin/2018/04/12/redis/</id>
     <published>2018-04-12T06:05:02.000Z</published>
-    <updated>2018-04-12T08:03:41.958Z</updated>
+    <updated>2018-04-12T08:03:40.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="关与yii2封装的redis的安装使用"><a href="#关与yii2封装的redis的安装使用" class="headerlink" title="关与yii2封装的redis的安装使用"></a>关与yii2封装的redis的安装使用</h2><pre><code>安装redis扩展就不介绍了,进入主题
 </code></pre><hr>
@@ -513,7 +513,7 @@ zset的item是唯一的，但是分数是可以重复的</code></p>
     <link href="http://www.dannisi.xin/2017/08/14/Yii/"/>
     <id>http://www.dannisi.xin/2017/08/14/Yii/</id>
     <published>2017-08-14T06:07:07.000Z</published>
-    <updated>2017-08-14T07:17:06.459Z</updated>
+    <updated>2017-08-14T07:17:06.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>给大家分享一些这段时间我学习yii2 踩得一些坑</p>
 <hr>
@@ -572,7 +572,7 @@ zset的item是唯一的，但是分数是可以重复的</code></p>
     <link href="http://www.dannisi.xin/2017/07/24/remember/"/>
     <id>http://www.dannisi.xin/2017/07/24/remember/</id>
     <published>2017-07-24T01:56:18.000Z</published>
-    <updated>2017-07-24T02:58:06.043Z</updated>
+    <updated>2017-07-24T02:58:06.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>给大家分享一些我的回忆…</p>
 <hr>
@@ -621,7 +621,7 @@ zset的item是唯一的，但是分数是可以重复的</code></p>
     <link href="http://www.dannisi.xin/2017/07/21/hello-world/"/>
     <id>http://www.dannisi.xin/2017/07/21/hello-world/</id>
     <published>2017-07-20T16:00:00.000Z</published>
-    <updated>2017-07-24T02:59:13.070Z</updated>
+    <updated>2017-07-24T02:59:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
